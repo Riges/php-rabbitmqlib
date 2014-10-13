@@ -1,4 +1,4 @@
 php-rabbitmqlib
 ===============
 
-PHP Library for using amqp protocol, tested particularly with RabbitMQ
+PHP Library for using AMQP . It's been tested against RabbitMQ.
