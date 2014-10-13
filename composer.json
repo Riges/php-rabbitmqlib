@@ -1,0 +1,23 @@
+{
+    "name": "riges/php-rabbitmqlib",
+    "description": "PHP Library for AMQP. It's been tested against RabbitMQ.",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "keywords": ["rabbitmq", "message", "queue"],
+    "authors": [
+        {
+            "name": "Riges"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "ext-bcmath": "*",
+        "videlalvaro/php-amqplib": "v2.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-4": {"Riges\\PhpRabbitMQLib\\": ""}
+    }
+}
