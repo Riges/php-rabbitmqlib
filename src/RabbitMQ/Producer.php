@@ -8,12 +8,15 @@ use PhpAmqpLib\Message\AMQPMessage;
 class Producer extends Connection
 {
     /**
-     * @param AMQPConnection $rabbitMQ
+     * @param string $rabbitMQHost
+     * @param string|int $rabbitMQPort
+     * @param $rabbitMQUser
+     * @param $rabbitMQPassword
      * @param string $queueName
      */
-    public function __construct($rabbitMQ, $queueName)
+    public function __construct($rabbitMQHost, $rabbitMQPort = 5672, $rabbitMQUser, $rabbitMQPassword, $queueName)
     {
-        parent::__construct($rabbitMQ, $queueName);
+        parent::__construct($rabbitMQHost, $rabbitMQPort = 5672, $rabbitMQUser, $rabbitMQPassword, $queueName);
         $this->queueDeclare();
     }
 
