@@ -29,15 +29,18 @@ class Consumer extends Connection
     private $ttl = 1800;
 
     /**
-     * @param AMQPConnection $rabbitMQ
+     * @param string $rabbitMQHost
+     * @param string|int $rabbitMQPort
+     * @param $rabbitMQUser
+     * @param $rabbitMQPassword
      * @param string $queueName
      * @param string $workPath
      * @param int $maxConsumers
      * @param int $ttl
      */
-    public function __construct($rabbitMQ, $queueName, $workPath, $maxConsumers = 10, $ttl = 1800)
+    public function __construct($rabbitMQHost, $rabbitMQPort = 5672, $rabbitMQUser, $rabbitMQPassword, $queueName, $workPath, $maxConsumers = 10, $ttl = 1800)
     {
-        parent::__construct($rabbitMQ, $queueName);
+        parent::__construct($rabbitMQHost, $rabbitMQPort = 5672, $rabbitMQUser, $rabbitMQPassword, $queueName);
 
         $this->workPath = $workPath;
         $this->maxConsumers = $maxConsumers;

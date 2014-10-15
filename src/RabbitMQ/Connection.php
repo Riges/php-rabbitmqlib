@@ -23,12 +23,17 @@ class Connection
     private $queueName;
 
     /**
-     * @param AMQPConnection $rabbitMQ
+     * @param string $rabbitMQHost
+     * @param string|int $rabbitMQPort
+     * @param $rabbitMQUser
+     * @param $rabbitMQPassword
      * @param string $queueName
+     * @internal param string $rabbitMQIp
+     * @internal param AMQPConnection $rabbitMQ
      */
-    public function __construct($rabbitMQ, $queueName)
+    public function __construct($rabbitMQHost, $rabbitMQPort = 5672, $rabbitMQUser, $rabbitMQPassword, $queueName)
     {
-        $this->rabbitMQ = $rabbitMQ;
+        $this->rabbitMQ = new AMQPConnection($rabbitMQHost, $rabbitMQPort, $rabbitMQUser, $rabbitMQPassword);
         $this->queueName = $queueName;
     }
 
